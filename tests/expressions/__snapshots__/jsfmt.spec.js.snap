@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`multiline.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+<%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+
+<%=
+  react_component(
+    "HelloWorld",
+    { greeting: "Hello from react-rails." }
+  ) %>
+<%= react_component(
+      "HelloWorld",
+       { greeting: "Hello from react-rails." }
+       ) %>
+
+    <%= react_component(
+      "HelloWorld",
+       { greeting: "Hello from react-rails." }
+       )
+           %>
+  <%=
+ react_component(
+      "HelloWorld",
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." }
+
+       )
+          %>
+
+</div>
+
+=====================================output=====================================
+<div>
+  <%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+
+  <%=
+    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
+  %>
+  <%=
+    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
+  %>
+
+  <%=
+    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
+  %>
+  <%=
+    react_component(
+      'HelloWorld',
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+    )
+  %>
+</div>
+
+================================================================================
+`;
