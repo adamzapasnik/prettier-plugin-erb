@@ -489,9 +489,9 @@
     chalk "^4.0.0"
 
 "@prettier/plugin-ruby@^1.5.1":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-1.5.2.tgz#ca18cd7629ef0a3dec18b8dfbe7aba3d33a2e855"
-  integrity sha512-hHX9ooxGQ4PC4FHge6HmK8LLUhLCu3lk1fVt0TJXvV5AlnY47PaBpQgQ58BzyrU9/EfZj3rpcIKiQQdelkvWNA==
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-1.5.5.tgz#9e206fc856a182a292fcfab9043f53c7a3d0af97"
+  integrity sha512-b387GdXU+LrnY+oaKWRUI5EnsUvrQ0G1jUSVPkvUTGzp/w+BB9/n4SICVPY3V9/wYsvWpAZq4LkE4FdBufXUtA==
   dependencies:
     prettier ">=1.10"
 
