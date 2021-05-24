@@ -1,5 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`long_start_line.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<%= link_to signout_path, class: "very-long-class-name-here-to-cause-line-break-break-break-break" do %>
+    Welcome
+<% end %>
+=====================================output=====================================
+<%= link_to signout_path, class: "very-long-class-name-here-to-cause-line-break-break-break-break" do %>
+  Welcome
+<% end %>
+
+================================================================================
+`;
+
 exports[`multiline.html.erb 1`] = `
 ====================================options=====================================
 parsers: ["erb"]
@@ -39,18 +56,12 @@ printWidth: 80
 
 =====================================output=====================================
 <div>
-  <%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
 
-  <%=
-    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
-  %>
-  <%=
-    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
-  %>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
 
-  <%=
-    react_component('HelloWorld', { greeting: 'Hello from react-rails.' })
-  %>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
   <%=
     react_component(
       'HelloWorld',
@@ -72,31 +83,155 @@ printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
 <%#
-# Flash Partial
-
-This partial renders flash messages on every page.
-
-## Relevant Helpers:
-
-- \`flash\`:
-  Returns a hash,
-  where the keys are the type of flash (alert, error, notice, etc)
-  and the values are the message to be displayed.
+This fails
+  hey
+    hey
+      hey
+  hey
 %>
 
+<%#
+    This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+    This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#    This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+    hey
+%>
+
+<%#
+  hey
+%>
+
+<%#
+hey
+%>
 =====================================output=====================================
 <%#
-  # Flash Partial
-
-  This partial renders flash messages on every page.
-
-  ## Relevant Helpers:
-
-  - \`flash\`:
-    Returns a hash,
-    where the keys are the type of flash (alert, error, notice, etc)
-    and the values are the message to be displayed.
+  This fails
+    hey
+      hey
+        hey
+    hey
 %>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# hey %>
+
+<%# hey %>
+
+<%# hey %>
 
 ================================================================================
 `;
@@ -116,7 +251,7 @@ printWidth: 80
 
 
 =====================================output=====================================
-<%= link_to 'New Order', new_order_path, class: "btn btn-success" %>
+<%= link_to 'New Order', new_order_path, class: 'btn btn-success' %>
 
 ================================================================================
 `;
@@ -138,8 +273,54 @@ printWidth: 80
 
 
 =====================================output=====================================
-<%=
-  link_to 'New Order', class: 'btn btn-success'
+<%= link_to 'New Order', class: 'btn btn-success' %>
+
+================================================================================
+`;
+
+exports[`singleline_comments.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<%# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#= link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#- link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%-# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+
+<%# if smth %>
+<%#else %>
+<%# end %>
+=====================================output=====================================
+<%# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#= link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#- link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%-# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+
+<%# if smth %>
+<%# else %>
+<%# end %>
+
+================================================================================
+`;
+
+exports[`singleline_formatted.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<% link_to "Very long string here and there", very_very_very_long_long_long_pathhhhhh_here, opt: "212", options: "222sdasdasd", class: "  322 ", dis: diss%>
+
+=====================================output=====================================
+<%
+  link_to 'Very long string here and there',
+          very_very_very_long_long_long_pathhhhhh_here,
+          opt: '212',
+          options: '222sdasdasd',
+          class: '  322 ',
+          dis: diss
 %>
 
 ================================================================================
