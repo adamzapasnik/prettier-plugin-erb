@@ -2,7 +2,7 @@
 
 All notable changes to the prettier-plugin-erb will be documented in this file.
 
-## Unreleased
+## v0.2.0 - 25 May 2021
 
 ### Features
 
@@ -16,6 +16,6 @@ All notable changes to the prettier-plugin-erb will be documented in this file.
 - Fix formatting of singline and multiline comments
 - Specify prettier version to be lowar than 2.3
 
-## v.0.1.0 - 7 February 2021
+## v0.1.0 - 7 February 2021
 
 Initial release
