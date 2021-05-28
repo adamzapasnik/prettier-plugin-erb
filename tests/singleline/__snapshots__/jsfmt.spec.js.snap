@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<%# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#= link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#- link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%-# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+
+<%# if smth %>
+<%#else %>
+<%# end %>
+=====================================output=====================================
+<%# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#= link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%#- link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+<%-# link_to 'Approve', some_path, class: 'something', disabled: disabled %>
+
+<%# if smth %>
+<%# else %>
+<%# end %>
+
+================================================================================
+`;
+
+exports[`formatted.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<% link_to "Very long string here and there", very_very_very_long_long_long_pathhhhhh_here, opt: "212", options: "222sdasdasd", class: "  322 ", dis: diss%>
+
+=====================================output=====================================
+<%
+  link_to 'Very long string here and there',
+          very_very_very_long_long_long_pathhhhhh_here,
+          opt: '212',
+          options: '222sdasdasd',
+          class: '  322 ',
+          dis: diss
+%>
+
+================================================================================
+`;
+
+exports[`if_then_else.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<% if eeee then "b" else c end %>
+<% if eeee then a else c end %>
+
+<% if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong then a else c end %>
+
+<% if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong then 'a' else "c" end %>
+
+<div <% if eeee then "b" else c end %>></div>
+<div <% if eeee then a else c end %>></div>
+
+<div <% if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong then a else c end %>></div>
+
+<div <% if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong then 'a' else "c" end %>></div>
+
+=====================================output=====================================
+<% eeee ? 'b' : c %>
+<% eeee ? a : c %>
+
+<%
+  if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+    a
+  else
+    c
+  end
+%>
+
+<%
+  if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+    'a'
+  else
+    'c'
+  end
+%>
+
+<div <% eeee ? 'b' : c %>></div>
+<div <% eeee ? a : c %>></div>
+
+<div
+  <%
+  if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+    a
+  else
+    c
+  end
+%>
+></div>
+
+<div
+  <%
+  if longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+    'a'
+  else
+    'c'
+  end
+%>
+></div>
+
+================================================================================
+`;
+
+exports[`long_deep_nested.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<% link_to "Very long long long long long long long long string here and there", very_very_very_long_long_long_pathhhhhh_here, opt: "212", options: "222sdasdasd", class: "  322 ", dis: diss%>
+
+<% link_to "string", path, opt: "212", options: "222sdasdasd"%>
+
+<div>
+<div>
+<div>
+<div>
+<%= react_component({ greeting: 'react-rails.' }) %>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <div>
+                                  <div>
+                                    <%
+                                      link_to 'Very long long long long long long long long string here and there',
+                                              very_very_very_long_long_long_pathhhhhh_here,
+                                              opt: '212',
+                                              options: '222sdasdasd',
+                                              class: '  322 ',
+                                              dis: diss
+                                    %>
+
+                                    <%
+                                      link_to 'string',
+                                              path,
+                                              opt: '212',
+                                              options: '222sdasdasd'
+                                    %>
+
+                                    <div>
+                                      <div>
+                                        <div>
+                                          <div>
+                                            <%=
+                                              react_component(
+                                                { greeting: 'react-rails.' },
+                                              )
+                                            %>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+================================================================================
+`;
+
+exports[`single.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+
+
+      <%= link_to 'New Order', new_order_path, class: "btn btn-success" %>
+
+
+
+
+=====================================output=====================================
+<%= link_to 'New Order', new_order_path, class: 'btn btn-success' %>
+
+================================================================================
+`;

@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<%#
+This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+    This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# This fails
+    This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#    This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+    hey
+%>
+
+<%#
+  hey
+%>
+
+<%#
+hey
+%>
+=====================================output=====================================
+<%#
+  This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+    hey
+      hey
+        hey
+    hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%#
+  This fails
+  This fails
+  hey
+    hey
+      hey
+  hey
+%>
+
+<%# hey %>
+
+<%# hey %>
+
+<%# hey %>
+
+================================================================================
+`;
+
+exports[`formatted.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+<%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+
+<%=
+  react_component(
+    "HelloWorld",
+    { greeting: "Hello from react-rails." }
+  ) %>
+<%= react_component(
+      "HelloWorld",
+       { greeting: "Hello from react-rails." }
+       ) %>
+
+    <%= react_component(
+      "HelloWorld",
+       { greeting: "Hello from react-rails." }
+       )
+           %>
+  <%=
+ react_component(
+      "HelloWorld",
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." },
+    { greeting: "Hello from react-rails." }
+
+       )
+          %>
+
+</div>
+
+=====================================output=====================================
+<div>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
+
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
+
+  <%= react_component('HelloWorld', { greeting: 'Hello from react-rails.' }) %>
+  <%=
+    react_component(
+      'HelloWorld',
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+      { greeting: 'Hello from react-rails.' },
+    )
+  %>
+</div>
+
+================================================================================
+`;
+
+exports[`long_deep_nested.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<div>
+<%=
+react_component(
+     "HelloWorld",
+   { greeting: "Hello from react-rails react-rails react-rails react-rails react-rails react-rails react-rails." },
+   { greeting: "Hello from react-rails react-rails react-rails react-rails react-rails react-rails react-rails." },
+   { greeting: "Hello from react-rails." },
+   { greeting: "Hello from react-rails." }
+
+      )
+         %>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <div>
+                                  <div>
+                                    <%=
+                                      react_component(
+                                        'HelloWorld',
+                                        {
+                                          greeting:
+                                            'Hello from react-rails react-rails react-rails react-rails react-rails react-rails react-rails.',
+                                        },
+                                        {
+                                          greeting:
+                                            'Hello from react-rails react-rails react-rails react-rails react-rails react-rails react-rails.',
+                                        },
+                                        { greeting: 'Hello from react-rails.' },
+                                        { greeting: 'Hello from react-rails.' },
+                                      )
+                                    %>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+================================================================================
+`;
+
+exports[`single.html.erb 1`] = `
+====================================options=====================================
+parsers: ["erb"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+
+
+
+
+      <%= link_to "New Order",
+       class: "btn btn-success" %>
+
+
+
+=====================================output=====================================
+<%= link_to 'New Order', class: 'btn btn-success' %>
+
+================================================================================
+`;
