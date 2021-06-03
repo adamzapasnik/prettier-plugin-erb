@@ -2,6 +2,12 @@
 
 All notable changes to the prettier-plugin-erb will be documented in this file.
 
+## v0.3.0 - 3 June 2021
+
+### Bug fixes
+
+- Fix formatting of expressions inside elements
+
 ## v0.2.0 - 25 May 2021
 
 ### Features
