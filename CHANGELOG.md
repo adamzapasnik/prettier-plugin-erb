@@ -2,6 +2,12 @@
 
 All notable changes to the prettier-plugin-erb will be documented in this file.
 
+## v0.4.0 - 24 June 2021
+
+### Bug fixes
+
+- Fix `[object Object]`
+
 ## v0.3.0 - 3 June 2021
 
 ### Bug fixes
