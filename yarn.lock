@@ -664,12 +664,12 @@
     "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
-"@prettier/plugin-ruby@^1.5.1":
-  version "1.5.5"
-  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-1.5.5.tgz#9e206fc856a182a292fcfab9043f53c7a3d0af97"
-  integrity sha512-b387GdXU+LrnY+oaKWRUI5EnsUvrQ0G1jUSVPkvUTGzp/w+BB9/n4SICVPY3V9/wYsvWpAZq4LkE4FdBufXUtA==
+"@prettier/plugin-ruby@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@prettier/plugin-ruby/-/plugin-ruby-2.0.0.tgz#a9f2d4183b56a9db9f80bbc685832a3b78685793"
+  integrity sha512-pA0rjTi5J7cT86XPNhXp7CpdV2Tlyj5oqDIsnQRxMu2P7LY2KJI/pyOSM8pzTH8BgRyQfe1P1NPCcTwxUnUWtQ==
   dependencies:
-    prettier ">=1.10"
+    prettier ">=2.3.0"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.2"
@@ -3175,10 +3175,15 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@>=1.10, "prettier@>=2.0.0 <2.3":
+"prettier@>=2.0.0 <2.3":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+
+prettier@>=2.3.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
+  integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==
 
 pretty-format@^27.0.2:
   version "27.0.2"
