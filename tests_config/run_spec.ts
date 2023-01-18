@@ -11,7 +11,7 @@ const CURSOR_PLACEHOLDER = '<|>';
 const RANGE_START_PLACEHOLDER = '<<<PRETTIER_RANGE_START>>>';
 const RANGE_END_PLACEHOLDER = '<<<PRETTIER_RANGE_END>>>';
 
-const plugin = path.join(__dirname, '..');
+const plugin = path.join(__dirname, 'test_plugin');
 
 global.run_spec = (dirname, parsers, options) => {
   options = Object.assign({}, options, {

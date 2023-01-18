@@ -30,7 +30,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "jest",
+    "test": "jest --config jest.config.js",
     "lint": "eslint .",
     "build": "tsc"
   },

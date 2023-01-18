@@ -2952,7 +2952,7 @@ prelude-ls@^1.2.1:
 
 "prettier-html-templates@https://github.com/amkisko/prettier-html-templates.git":
   version "0.1.0"
-  resolved "https://github.com/amkisko/prettier-html-templates.git#8c6674dcd0c0e108c2d64f170bb4e5e12d2b8abd"
+  resolved "https://github.com/amkisko/prettier-html-templates.git#100892f9d3f5629add47cf35bb27eb604017ff1a"
 
 prettier-linter-helpers@^1.0.0:
   version "1.0.0"

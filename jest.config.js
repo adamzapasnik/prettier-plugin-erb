@@ -8,7 +8,7 @@ module.exports = {
   collectCoverage: ENABLE_CODE_COVERAGE,
   testEnvironment: 'node',
   transform: {
-    '^.+\\.(t|j)sx?$': 'ts-jest',
+    '^.+\\.(ts|js)$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'json', 'node'],
 };

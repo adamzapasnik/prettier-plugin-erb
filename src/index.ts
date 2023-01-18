@@ -1,7 +1,7 @@
 import parser from './parser';
 import printers from './printers';
 
-export default {
+const configuration = {
   defaultOptions: {},
   parsers: {
     erb: parser,
@@ -15,3 +15,5 @@ export default {
     },
   ],
 };
+
+export default configuration;
