@@ -1,4 +1,4 @@
-const expressionTypeMatcher = require('../lib/expression_type_matcher');
+import { expressionTypeMatcher } from '../src/expression_type_matcher';
 
 describe('if inlined', () => {
   test.each([

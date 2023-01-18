@@ -3,7 +3,7 @@ import prettier from 'prettier';
 const { indent, hardline, group, line } = prettier.doc.builders;
 const { printDocToString } = prettier.doc.printer;
 
-const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
+export const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
   return tokens
     .map((token) => ({ ...token }))
     .map((token) => {
@@ -88,4 +88,3 @@ const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
       return token;
     });
 };
-export default formatMultilineExpressions;

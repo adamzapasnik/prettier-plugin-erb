@@ -5,7 +5,7 @@ import prettier from 'prettier';
 const { mapDoc } = prettier.doc.utils;
 const { hardline } = prettier.doc.builders;
 
-import formatMultilineExpressions from './formatter';
+import { formatMultilineExpressions } from './formatter';
 
 let embedTextToDoc;
 
@@ -41,7 +41,7 @@ function print(path, options, _print) {
   return mapDoc(htmlDoc, callback);
 }
 
-module.exports = {
+export default {
   'erb-ast': {
     embed,
     print,

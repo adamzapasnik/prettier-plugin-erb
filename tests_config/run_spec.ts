@@ -1,16 +1,15 @@
 // https://github.com/prettier/plugin-php/blob/master/tests_config/run_spec.js
 
-const fs = require('fs');
-const path = require('path');
-const raw = require('jest-snapshot-serializer-raw').wrap;
+import fs from 'fs';
+import path from 'path';
+import prettier from 'prettier';
+import raw from 'jest-snapshot-serializer-raw';
 
 const { TEST_CRLF } = process.env;
 
 const CURSOR_PLACEHOLDER = '<|>';
 const RANGE_START_PLACEHOLDER = '<<<PRETTIER_RANGE_START>>>';
 const RANGE_END_PLACEHOLDER = '<<<PRETTIER_RANGE_END>>>';
-
-const prettier = require('prettier');
 
 const plugin = path.join(__dirname, '..');
 
@@ -136,14 +135,16 @@ function createSnapshot(input, output, options) {
       : [];
   return []
     .concat(
-      printSeparator(separatorWidth, 'options'),
-      printOptions(omit(options, (k) => k === 'rangeStart' || k === 'rangeEnd' || k === 'cursorOffset')),
-      printWidthIndicator,
-      printSeparator(separatorWidth, 'input'),
-      input,
-      printSeparator(separatorWidth, 'output'),
-      output,
-      printSeparator(separatorWidth)
+      ...[
+        printSeparator(separatorWidth, 'options'),
+        printOptions(omit(options, (k) => k === 'rangeStart' || k === 'rangeEnd' || k === 'cursorOffset')),
+        printWidthIndicator,
+        printSeparator(separatorWidth, 'input'),
+        input,
+        printSeparator(separatorWidth, 'output'),
+        output,
+        printSeparator(separatorWidth, '')
+      ]
     )
     .join('\n');
 }

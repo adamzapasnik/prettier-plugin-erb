@@ -1,4 +1,4 @@
-const expressionTypeMatcher = (expression) => {
+export const expressionTypeMatcher = (expression) => {
   let type;
 
   if (/<%-?\s*(if|unless)\s[\s\S]*?end\s*-?%>/.test(expression)) {
@@ -15,5 +15,3 @@ const expressionTypeMatcher = (expression) => {
 
   return { type };
 };
-
-export default expressionTypeMatcher;

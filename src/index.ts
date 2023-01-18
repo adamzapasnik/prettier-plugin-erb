@@ -1,7 +1,7 @@
-const parser = require('./parser');
-const printers = require('./printers');
+import parser from './parser';
+import printers from './printers';
 
-module.exports = {
+export default {
   defaultOptions: {},
   parsers: {
     erb: parser,
