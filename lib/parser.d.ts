@@ -1,5 +1,5 @@
 declare const _default: {
-    parse: (text: string) => Promise<any>;
+    parse: (text: string) => Promise<any[]>;
     astFormat: string;
 };
 export default _default;
