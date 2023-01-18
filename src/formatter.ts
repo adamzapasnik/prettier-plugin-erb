@@ -1,5 +1,7 @@
-const { concat, indent, hardline, group, line } = require('prettier').doc.builders;
-const { printDocToString } = require('prettier').doc.printer;
+import prettier from 'prettier';
+
+const { indent, hardline, group, line } = prettier.doc.builders;
+const { printDocToString } = prettier.doc.printer;
 
 const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
   return tokens
@@ -56,19 +58,19 @@ const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
             .slice(0, -1); // remove last hardline
 
           token.content = group(
-            concat([
+            [
               openingFullTag,
-              indent(concat([hardline, concat(formattedMultilineExpression)])),
+              indent([hardline, formattedMultilineExpression]),
               hardline,
               closingFullTag,
-            ])
+            ]
           );
         } else if (typeof formattedExpression === 'object') {
           token.content = group(
-            concat([openingFullTag, indent(concat([line, formattedExpression])), line, closingFullTag])
+            [openingFullTag, indent([line, formattedExpression]), line, closingFullTag]
           );
         } else {
-          token.content = group(concat([openingFullTag, ' ', formattedExpression.trim(), ' ', closingFullTag]));
+          token.content = group([openingFullTag, ' ', formattedExpression.trim(), ' ', closingFullTag]);
         }
 
         // prettier-html-templates can't handle objects in this case, only strings
@@ -86,5 +88,4 @@ const formatMultilineExpressions = (tokens, options, embedTextToDoc) => {
       return token;
     });
 };
-
-module.exports = formatMultilineExpressions;
+export default formatMultilineExpressions;

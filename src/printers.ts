@@ -1,13 +1,18 @@
-const { encodeExpressions, decodeExpressions } = require('prettier-html-templates');
-const { mapDoc } = require('prettier').doc.utils;
-const { concat, hardline } = require('prettier').doc.builders;
-const formatMultilineExpressions = require('./formatter');
-const prettier = require('prettier');
+import { encodeExpressions, decodeExpressions } from 'prettier-html-templates';
+
+import prettier from 'prettier';
+
+const { mapDoc } = prettier.doc.utils;
+const { hardline } = prettier.doc.builders;
+
+import formatMultilineExpressions from './formatter';
 
 let embedTextToDoc;
 
-function embed(path, _print, textToDoc, options) {
-  embedTextToDoc = textToDoc;
+function embed(path, options) {
+  return async (textToDoc) => {
+    embedTextToDoc = textToDoc
+  };
 }
 
 function print(path, options, _print) {
@@ -25,7 +30,7 @@ function print(path, options, _print) {
     expressionsCount === 1 && !tokens.find((token) => token.type === 'text' && token.content.trim());
 
   if (isTextOnlyWithSingleExpression) {
-    return concat([formattedTokens.find((token) => token.type !== 'text').content, hardline]);
+    return [formattedTokens.find((token) => token.type !== 'text').content, hardline];
   }
 
   const [text, expressionMap] = encodeExpressions(formattedTokens);

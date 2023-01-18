@@ -16,4 +16,4 @@ const expressionTypeMatcher = (expression) => {
   return { type };
 };
 
-module.exports = expressionTypeMatcher;
+export default expressionTypeMatcher;

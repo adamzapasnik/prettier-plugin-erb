@@ -1,4 +1,10 @@
 .DS_Store
-node_modules/
-.vscode/
-coverage/
+node_modules
+.vscode
+coverage
+
+logs
+*.log
+npm-debug.log*
+
+lib
