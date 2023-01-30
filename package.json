@@ -5,7 +5,7 @@
   "description": "Prettier plugin for .html.erb files",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amkisko/prettier-plugin-erb"
+    "url": "https://github.com/adamzapasnik/prettier-plugin-erb"
   },
   "author": {
     "name": "Adam Zapaśnik",
@@ -13,9 +13,9 @@
     "url": "https://adamzapasnik.io"
   },
   "bugs": {
-    "url": "https://github.com/amkisko/prettier-plugin-erb/issues"
+    "url": "https://github.com/adamzapasnik/prettier-plugin-erb/issues"
   },
-  "homepage": "https://github.com/amkisko/prettier-plugin-erb#readme",
+  "homepage": "https://github.com/adamzapasnik/prettier-plugin-erb#readme",
   "keywords": [
     "plugin",
     "prettier",
@@ -66,6 +66,6 @@
     "prettier": "2.8.0"
   },
   "dependencies": {
-    "prettier-html-templates": "https://github.com/amkisko/prettier-html-templates.git"
+    "prettier-html-templates": "https://github.com/adamzapasnik/prettier-html-templates.git"
   }
 }
